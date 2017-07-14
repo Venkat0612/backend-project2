@@ -1,4 +1,5 @@
 com\niit\controller\JobController.class
+com\niit\controller\FriendController.class
 com\niit\dao\BlogPostDao.class
 com\niit\dao\JobDao.class
 com\niit\model\BlogComment.class

@@ -13,6 +13,8 @@ import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 
 import com.niit.dao.BlogPostDao;
 import com.niit.dao.BlogPostDaoImpl;
+import com.niit.dao.FriendDao;
+import com.niit.dao.FriendDaoImpl;
 import com.niit.dao.JobDao;
 import com.niit.dao.JobDaoImpl;
 import com.niit.dao.UsersDao;
@@ -104,6 +106,11 @@ public class DBConfig
 		
 		return new BlogPostDaoImpl();
 	}
-
+	@Autowired
+	@Bean(name="friendDao")
+	public FriendDao getfriendDao(SessionFactory sessionFactory)
+	{
+		return new FriendDaoImpl();
+	}
 	
 }

@@ -19,14 +19,18 @@ import com.niit.dao.JobDao;
 import com.niit.dao.JobDaoImpl;
 import com.niit.dao.ProfilePictureDao;
 import com.niit.dao.ProfilePictureDaoImpl;
-import com.niit.dao.UsersDao;
+/*import com.niit.dao.ProfilePictureDao;
+import com.niit.dao.ProfilePictureDaoImpl;
+*/import com.niit.dao.UsersDao;
 import com.niit.dao.UsersDaoImpl;
 import com.niit.model.BlogComment;
 import com.niit.model.BlogPost;
 import com.niit.model.Friend;
 import com.niit.model.Job;
 import com.niit.model.ProfilePicture;
+/*import com.niit.model.ProfilePicture;*/
 import com.niit.model.Users;
+
 
 
 
@@ -77,7 +81,7 @@ public class DBConfig
 		  sessionBuilder.addAnnotatedClasses(ForumComment.class);
 		 sessionBuilder.addAnnotatedClasses(BlogLikes.class);*/
 		 
-		System.out.println("Session is crated................!");
+		System.out.println("Session is created................!");
 
 		return sessionBuilder.buildSessionFactory();
 
@@ -112,17 +116,15 @@ public class DBConfig
 	}
 	@Autowired
 	@Bean(name="friendDao")
-	public FriendDao getfriendDao(SessionFactory sessionFactory)
-	{
+	public FriendDao getfriendDao(SessionFactory sessionFactory){
+		
 		return new FriendDaoImpl();
 	}
-	
 	@Autowired
 	@Bean(name="profilePictureDao")
-	public ProfilePictureDao getprofilePictureDao(SessionFactory sessionFactory)
-	{
+	public ProfilePictureDao getprofilePictureDao(SessionFactory sessionFactory){
+		
 		return new ProfilePictureDaoImpl();
 	}
-	
 	
 }

@@ -1,5 +1,3 @@
-
-
 package com.niit.controller;
 
 import javax.servlet.http.HttpSession;
@@ -28,7 +26,7 @@ private ProfilePictureDao profilePictureDao;
 public ResponseEntity<?> uploadProfilePicture(@RequestParam CommonsMultipartFile image,HttpSession session){
 	Users users=(Users)session.getAttribute("user");
 	if(users==null)		{
-		    Error error=new Error(3,"UnAuthorized user");
+		   Error error=new Error(3,"UnAuthorized user");
 			return new ResponseEntity<Error>(error,HttpStatus.UNAUTHORIZED);
 	} 
 	ProfilePicture profilePicture=new ProfilePicture();
